@@ -3,190 +3,198 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>RLQ SENSI</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial,sans-serif;
     }
 
-    body {
-      background: #050505;
-      color: white;
+    body{
+      background:#050505;
+      color:#fff;
     }
 
-    header {
-      width: 100%;
-      padding: 20px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #080808;
-      border-bottom: 1px solid #222;
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 8%;
+      background:#080808;
+      border-bottom:1px solid #222;
     }
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
+    .logo{
+      font-size:24px;
+      font-weight:bold;
     }
 
-    .discord-btn {
-      background: #5865F2;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
+    button{
+      cursor:pointer;
     }
 
-    .hero {
-      min-height: 75vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 40px 20px;
+    .discord-btn{
+      background:#5865F2;
+      color:white;
+      border:0;
+      padding:12px 20px;
+      border-radius:8px;
+      font-weight:bold;
     }
 
-    .hero h1 {
-      font-size: 50px;
-      margin-bottom: 15px;
+    .hero{
+      min-height:70vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:40px 20px;
     }
 
-    .hero p {
-      color: #aaa;
-      font-size: 18px;
-      max-width: 600px;
-      margin-bottom: 30px;
+    .hero h1{
+      font-size:52px;
+      margin-bottom:15px;
     }
 
-    .products {
-      padding: 60px 8%;
-      text-align: center;
+    .hero p{
+      color:#aaa;
+      font-size:18px;
+      max-width:650px;
+      margin-bottom:30px;
     }
 
-    .products h2 {
-      font-size: 35px;
-      margin-bottom: 40px;
+    .products{
+      padding:70px 8%;
+      text-align:center;
     }
 
-    .cards {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      flex-wrap: wrap;
+    .products h2{
+      font-size:35px;
+      margin-bottom:40px;
     }
 
-    .card {
-      width: 300px;
-      background: #0d0d0d;
-      border: 1px solid #252525;
-      border-radius: 15px;
-      padding: 30px;
+    .cards{
+      display:flex;
+      justify-content:center;
+      gap:25px;
+      flex-wrap:wrap;
     }
 
-    .card h3 {
-      font-size: 25px;
-      margin-bottom: 15px;
+    .card{
+      width:300px;
+      background:#0d0d0d;
+      border:1px solid #252525;
+      border-radius:15px;
+      padding:30px;
     }
 
-    .price {
-      font-size: 30px;
-      font-weight: bold;
-      margin: 20px 0;
+    .card h3{
+      font-size:25px;
+      margin-bottom:15px;
     }
 
-    .buy-btn {
-      width: 100%;
-      padding: 13px;
-      border: none;
-      border-radius: 8px;
-      background: #5865F2;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
+    .card p{
+      color:#aaa;
+      line-height:1.5;
     }
 
-    .support {
-      padding: 60px 20px;
-      text-align: center;
+    .price{
+      font-size:30px;
+      font-weight:bold;
+      margin:20px 0;
     }
 
-    .support button {
-      margin-top: 20px;
-      padding: 13px 25px;
-      border: none;
-      border-radius: 8px;
-      background: #5865F2;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
+    .buy-btn{
+      width:100%;
+      padding:13px;
+      border:0;
+      border-radius:8px;
+      background:#5865F2;
+      color:white;
+      font-weight:bold;
     }
 
-    .modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.8);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
+    .support{
+      text-align:center;
+      padding:60px 20px;
     }
 
-    .modal.show {
-      display: flex;
+    .support p{
+      color:#aaa;
+      margin-top:10px;
     }
 
-    .modal-content {
-      background: #101010;
-      border: 1px solid #292929;
-      border-radius: 15px;
-      padding: 30px;
-      max-width: 450px;
-      width: 100%;
-      text-align: center;
+    .support button{
+      margin-top:20px;
+      padding:13px 25px;
+      border:0;
+      border-radius:8px;
+      background:#5865F2;
+      color:white;
+      font-weight:bold;
     }
 
-    .modal-content h3 {
-      margin-bottom: 15px;
+    .modal{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.8);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
     }
 
-    .modal-content p {
-      color: #aaa;
-      line-height: 1.5;
+    .modal.show{
+      display:flex;
     }
 
-    .close-btn {
-      margin-top: 20px;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      background: #222;
-      color: white;
+    .modal-content{
+      background:#101010;
+      border:1px solid #292929;
+      border-radius:15px;
+      padding:30px;
+      max-width:450px;
+      width:100%;
+      text-align:center;
     }
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #666;
-      border-top: 1px solid #222;
+    .modal-content h3{
+      margin-bottom:15px;
     }
 
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 38px;
+    .modal-content p{
+      color:#aaa;
+      line-height:1.5;
+    }
+
+    .close-btn{
+      margin-top:20px;
+      padding:10px 20px;
+      border:0;
+      border-radius:8px;
+      background:#222;
+      color:white;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      color:#666;
+      border-top:1px solid #222;
+    }
+
+    @media(max-width:600px){
+      .hero h1{
+        font-size:40px;
       }
 
-      .card {
-        width: 100%;
-        max-width: 330px;
+      .card{
+        width:100%;
+        max-width:330px;
       }
     }
   </style>
@@ -203,6 +211,7 @@
   </header>
 
   <section class="hero">
+
     <h1>RLQ SENSI</h1>
 
     <p>
@@ -213,6 +222,7 @@
     <button class="discord-btn" onclick="loginDiscord()">
       Entrar com Discord
     </button>
+
   </section>
 
   <section class="products" id="produtos">
@@ -222,6 +232,7 @@
     <div class="cards">
 
       <div class="card">
+
         <h3>PACK iOS</h3>
 
         <p>
@@ -234,9 +245,11 @@
         <button class="buy-btn" onclick="buy('Pack iOS')">
           Comprar
         </button>
+
       </div>
 
       <div class="card">
+
         <h3>PACK ANDROID</h3>
 
         <p>
@@ -249,6 +262,7 @@
         <button class="buy-btn" onclick="buy('Pack Android')">
           Comprar
         </button>
+
       </div>
 
     </div>
@@ -259,9 +273,7 @@
 
     <h2>Precisa de ajuda?</h2>
 
-    <p>
-      Entre em contato com nosso suporte.
-    </p>
+    <p>Entre em contato com nosso suporte.</p>
 
     <button onclick="openTicket()">
       Suporte
@@ -291,11 +303,13 @@
 
   <script>
 
-    function loginDiscord() {
+    // LOGIN DISCORD
+    function loginDiscord(){
       window.location.href = "/api/auth/discord";
     }
 
-    function buy(product) {
+    // PRODUTOS
+    function buy(product){
 
       document.getElementById("modalTitle").textContent = product;
 
@@ -306,17 +320,17 @@
       document.getElementById("modal").classList.add("show");
     }
 
-    function closeModal() {
+    function closeModal(){
       document.getElementById("modal").classList.remove("show");
     }
 
-    function openTicket() {
+    function openTicket(){
       alert("Aqui vamos colocar o link do seu sistema/canal de tickets do Discord.");
     }
 
-    document.getElementById("modal").addEventListener("click", function(e) {
+    document.getElementById("modal").addEventListener("click", function(e){
 
-      if (e.target === this) {
+      if(e.target === this){
         closeModal();
       }
 
