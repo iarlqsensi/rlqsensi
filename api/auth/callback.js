@@ -28,7 +28,8 @@ export default async function handler(req, res) {
       return res.status(500).send("Erro ao conectar com o Discord.");
     }
 
-    res.status(200).send("Login com Discord conectado!");
+    res.redirect(302, "https://rlqsensi.vercel.app/#produtos");
+
   } catch (error) {
     console.error(error);
     return res.status(500).send("Erro interno ao conectar com o Discord.");
